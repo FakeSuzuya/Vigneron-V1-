@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Vigneron</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="menu" class="menu">
+            <h1 id="menuTitle">Menu Vigneron</h1>
+
+            <!-- Menu principal -->
+            <div id="mainMenu" class="menu-content active">
+                <div class="option" data-submenu="startShiftMenu">
+                    <span class="option-icon">⏰</span>
+                    <span class="option-text">Démarrer le Service</span>
+                </div>
+                <div class="option" data-submenu="endShiftMenu">
+                    <span class="option-icon">🛑</span>
+                    <span class="option-text">Terminer le Service</span>
+                </div>
+                <div class="option" data-submenu="callVanMenu">
+                    <span class="option-icon">📞</span>
+                    <span class="option-text">Appeler le Van</span>
+                </div>
+                <div class="option" data-submenu="checkWinePriceMenu">
+                    <span class="option-icon">💰</span>
+                    <span class="option-text">Vérifier le Prix du Vin</span>
+                </div>
+                <div class="option" data-submenu="viewEmployeesMenu">
+                    <span class="option-icon">👥</span>
+                    <span class="option-text">Voir les Employés</span>
+                </div>
+                <button class="btn btn-close" onclick="closeMenu()">Fermer le Menu</button>
+            </div>
+
+            <!-- Sous-menus -->
+            <div id="startShiftMenu" class="subMenu">
+                <h2>Démarrer le Service</h2>
+                <p>Êtes-vous sûr de vouloir commencer votre service ?</p>
+                <button class="btn" onclick="selectOption('start_shift')">Valider</button>
+                <button class="btn btn-secondary" onclick="backToMainMenu()">Retour</button>
+            </div>
+
+            <div id="endShiftMenu" class="subMenu">
+                <h2>Terminer le Service</h2>
+                <p>Êtes-vous sûr de vouloir terminer votre service ?</p>
+                <button class="btn" onclick="selectOption('end_shift')">Valider</button>
+                <button class="btn btn-secondary" onclick="backToMainMenu()">Retour</button>
+            </div>
+
+            <div id="callVanMenu" class="subMenu">
+                <h2>Appeler le Van</h2>
+                <p>Voulez-vous appeler le van pour les livraisons ?</p>
+                <button class="btn" onclick="selectOption('call_dealer')">Valider</button>
+                <button class="btn btn-secondary" onclick="backToMainMenu()">Retour</button>
+            </div>
+
+            <div id="checkWinePriceMenu" class="subMenu">
+                <h2>Prix du Vin</h2>
+                <p>Le prix actuel du vin est de <span id="winePrice">0</span> $ par bouteille.</p>
+                <button class="btn btn-secondary" onclick="backToMainMenu()">Retour</button>
+            </div>
+
+            <div id="viewEmployeesMenu" class="subMenu">
+                <h2>Employés en Service</h2>
+                <ul id="employeeList">
+                    <!-- Les employés en service seront affichés ici -->
+                </ul>
+                <button class="btn btn-secondary" onclick="backToMainMenu()">Retour</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffre de Stockage</title>
+    <link rel="stylesheet" href="storage.css">
+</head>
+<body>
+    <div id="storageMenu" style="display: none;">
+        <h1>Coffre de Stockage</h1>
+        <div id="controls">
+            <div id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Rechercher un item...">
+            </div>
+            <div id="sortContainer">
+                <label for="sortSelect">Trier par :</label>
+                <select id="sortSelect">
+                    <option value="name">Nom</option>
+                    <option value="count">Quantité</option>
+                </select>
+            </div>
+        </div>
+        <div id="inventory">
+            <h2>Items Disponibles</h2>
+            <ul id="itemList">
+                <!-- Liste des items du coffre -->
+            </ul>
+        </div>
+        <div id="playerInventory">
+            <h2>Votre Inventaire</h2>
+            <ul id="playerItemList">
+                <!-- Liste des items du joueur -->
+            </ul>
+        </div>
+        <div id="quantityInput">
+            <label for="quantity">Quantité :</label>
+            <input type="number" id="quantity" min="1" max="9999" value="1">
+        </div>
+        <button id="closeBtn">Fermer</button>
+    </div>
+    <script src="storage.js"></script>
+</body>
+</html>

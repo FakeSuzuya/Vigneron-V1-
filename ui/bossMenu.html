@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Employés - Vigneron</title>
+    <link rel="stylesheet" href="bossMenu.css">
+</head>
+<body>
+    <div class="container">
+        <div id="bossMenu" class="menu">
+            <h1 id="menuTitle">Gestion du Vigneron</h1>
+
+            <!-- Menu principal -->
+            <div id="mainBossMenu" class="menu-content active">
+                <div class="option" data-submenu="employeeManagementMenu">
+                    <span class="option-icon">👥</span>
+                    <span class="option-text">Gestion des Employés</span>
+                </div>
+                <div class="option" data-submenu="manageGradesMenu">
+                    <span class="option-icon">🎖️</span>
+                    <span class="option-text">Gérer les Grades</span>
+                </div>
+                <div class="option" data-submenu="timeManagementMenu">
+                    <span class="option-icon">⏱️</span>
+                    <span class="option-text">Gérer le Temps de Service</span>
+                </div>
+                <button class="btn btn-close" onclick="closeBossMenu()">Fermer le Menu</button>
+            </div>
+
+            <!-- Sous-menu : Gestion des Employés -->
+            <div id="employeeManagementMenu" class="subMenu">
+                <h2>Gestion des Employés</h2>
+                <ul id="employeeList" class="employee-list">
+                    <!-- Liste des employés sera générée dynamiquement ici -->
+                </ul>
+                <button class="btn btn-secondary" onclick="backToMainBossMenu()">Retour</button>
+            </div>
+
+            <!-- Sous-menu : Gérer les Grades -->
+            <div id="manageGradesMenu" class="subMenu">
+                <h2>Gérer les Grades</h2>
+                <div id="gradeManagementOptions" class="grade-options">
+                    <!-- Les options pour gérer les grades seront affichées ici -->
+                </div>
+                <button class="btn btn-secondary" onclick="backToMainBossMenu()">Retour</button>
+            </div>
+
+            <!-- Sous-menu : Gérer le Temps de Service -->
+            <div id="timeManagementMenu" class="subMenu">
+                <h2>Gérer le Temps de Service</h2>
+                <ul id="timeManagementList" class="time-management-list">
+                    <!-- Liste des employés avec options pour gérer le temps de service -->
+                </ul>
+                <button class="btn btn-secondary" onclick="backToMainBossMenu()">Retour</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="bossMenu.js"></script>
+</body>
+</html>

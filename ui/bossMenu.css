@@ -1,0 +1,132 @@
+/* bossMenu.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(44, 44, 44, 0.9);
+    color: #dcdcdc;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.menu {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+    width: 350px;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.menu h1, .menu h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.menu .option {
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.menu .option:hover {
+    background-color: #555;
+    transform: translateY(-5px);
+}
+
+.menu .btn {
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+}
+
+.menu .btn:hover {
+    background-color: #4cae4c;
+    transform: translateY(-5px);
+}
+
+.menu .btn-secondary {
+    background-color: #5bc0de;
+}
+
+.menu .btn-secondary:hover {
+    background-color: #31b0d5;
+}
+
+.menu .btn-close {
+    background-color: #d9534f;
+    margin-top: 20px;
+}
+
+.menu .btn-close:hover {
+    background-color: #c9302c;
+}
+
+.subMenu {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+.subMenu.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.employee-list, .time-management-list, .grade-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.employee-list li, .time-management-list li, .grade-options li {
+    background-color: #444;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.employee-list li.empty, .time-management-list li.empty {
+    text-align: center;
+    color: #aaaaaa;
+}
