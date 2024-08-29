@@ -14,7 +14,8 @@ client_scripts {
     'client/cl_tool_repair.lua',
     'client/cl_boss_interaction.lua',
     'client/cl_storage.lua',
-    'client/cl_quality.lua'
+    'client/cl_quality.lua',
+    'client/cl_blips.lua'
 }
 
 server_scripts {
