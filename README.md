@@ -1,4 +1,4 @@
-# UPDATE Vigneron-V1.2.1.1-:grapes: (UN BUG EMPECHE LE FONCTIONNEMENT UN PATCH EST EN COURS)
+# UPDATE Vigneron-V1.2.1.1-🍇 (UN BUG EMPECHE LE FONCTIONNEMENT UN PATCH EST EN COURS)
 Vigneron-V1.2 est un script pour FiveM, une plateforme de modding pour fivem, conçu pour ajouter des fonctionnalités liées à la gestion de vignobles et à la production de vin dans votre serveur. Ce script enrichit l'expérience de jeu en permettant aux joueurs de cultiver des vignes, de récolter des raisins et de produire du vin.
 
 Fonctionnalités principales
