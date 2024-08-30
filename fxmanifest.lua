@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'JustSuzuya'
 description 'Job de Vigneron avec système de récolte'
-version '1.2.1'
+version '1.2.6'
 
 client_scripts {
     'client/cl_harvest.lua',
@@ -19,13 +19,14 @@ client_scripts {
 }
 
 server_scripts {
-    '@mysql-async/lib/MySQL.lua',
     'server/sv_inventory.lua',
     'server/sv_vigneron.lua',
     'server/sv_market.lua',
     'server/sv_boss.lua',
     'server/sv_storage.lua',
     'server/sv_tools.lua',
+    'server/sv_van_delivery.lua',
+    'server/sv_process.lua',
     'server/sv_harvest.lua'
 }
 

@@ -5,8 +5,10 @@ window.addEventListener('message', function(event) {
     if (data.action === 'openMenu') {
         document.querySelector('.container').style.display = 'flex';
         openMainMenu();
-    } else if (data.action === 'updateWinePrice') {
-        document.getElementById('winePrice').textContent = data.price;
+    } else if (data.action === 'updateWinePrices') {
+        document.getElementById('basicPrice').textContent = data.prices.basic.price;
+        document.getElementById('goodPrice').textContent = data.prices.good.price;
+        document.getElementById('premiumPrice').textContent = data.prices.premium.price;
     } else if (data.action === 'updateEmployeeList') {
         const employeeList = document.getElementById('employeeList');
         employeeList.innerHTML = '';

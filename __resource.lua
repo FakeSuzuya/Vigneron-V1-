@@ -24,6 +24,8 @@ server_scripts {
     'server/sv_boss.lua',
     'server/sv_storage.lua',
     'server/sv_tools.lua',
+    'server/sv_van_delivery.lua',
+    'server/sv_process.lua',
     'server/sv_harvest.lua'
 }
 

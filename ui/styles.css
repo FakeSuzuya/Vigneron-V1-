@@ -130,3 +130,17 @@ body {
     text-align: center;
     color: #aaaaaa;
 }
+
+.subMenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.subMenu ul li {
+    background-color: #333;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 16px;
+}

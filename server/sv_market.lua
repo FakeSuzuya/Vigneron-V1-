@@ -1,45 +1,56 @@
--- sv_market.lua
-
--- Load the locale
 local ESX = exports['es_extended']:getSharedObject()
 Locales = {}
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
 MySQL.ready(function()
-    -- Include the locale file
+    -- Chargement des locales
     if Config.Locale == 'en' then
         Locales['en'] = {
             ['wine_market_update'] = 'Wine Market Update',
-            ['wine_price_update'] = 'The current wine price is $%s per bottle.'
+            ['wine_price_update'] = 'The current price of %s is $%s per bottle.',
+            ['wine_basic'] = 'Basic Wine',
+            ['wine_good'] = 'Good Wine',
+            ['wine_premium'] = 'Premium Wine'
         }
     elseif Config.Locale == 'fr' then
         Locales['fr'] = {
             ['wine_market_update'] = 'Mise à jour du marché du vin',
-            ['wine_price_update'] = 'Le prix actuel du vin est de $%s par bouteille.'
+            ['wine_price_update'] = 'Le prix actuel du %s est de $%s par bouteille.',
+            ['wine_basic'] = 'Vin Basique',
+            ['wine_good'] = 'Vin de Bonne Qualité',
+            ['wine_premium'] = 'Vin Premium'
         }
     end
 end)
 
--- Example usage of _U function
-local winePrice = 2000
-local winePriceMin = 1500
-local winePriceMax = 3000
-local priceChangeInterval = 30 * 60000 -- 30 minutes in milliseconds
+-- Configuration des prix du vin
+local winePrices = {
+    ['wine_basic'] = {min = 1000, max = 1500, current = 1200},
+    ['wine_good'] = {min = 2000, max = 2500, current = 2200},
+    ['wine_premium'] = {min = 3000, max = 3500, current = 3200}
+}
 
+local priceChangeInterval = 30 * 60000 -- 30 minutes en millisecondes
+
+-- Mise à jour périodique des prix du vin
 CreateThread(function()
     while true do
         Wait(priceChangeInterval)
-        winePrice = math.random(winePriceMin, winePriceMax)
-        TriggerClientEvent('vigneron:updateMarketPrice', -1, winePrice)
-        TriggerClientEvent('ox_lib:notify', -1, {
-            title = _U('wine_market_update'),
-            description = _U('wine_price_update', winePrice),
-            type = 'inform',
-            duration = 15000,
-            icon = 'fa-wine-bottle'
-        })
+        for wineType, priceData in pairs(winePrices) do
+            winePrices[wineType].current = math.random(priceData.min, priceData.max)
+            TriggerClientEvent('vigneron:updateMarketPrice', -1, wineType, winePrices[wineType].current)
+            TriggerClientEvent('ox_lib:notify', -1, {
+                title = _U('wine_market_update'),
+                description = _U('wine_price_update', _U(wineType), winePrices[wineType].current),
+                type = 'inform',
+                duration = 15000,
+                icon = 'fa-wine-bottle'
+            })
+        end
     end
 end)
 
-ESX.RegisterServerCallback('vigneron:checkWinePrice', function(source, cb)
-    cb(winePrice)
+-- Callback pour vérifier les prix des vins
+ESX.RegisterServerCallback('vigneron:checkWinePrices', function(source, cb)
+    cb(winePrices)
 end)

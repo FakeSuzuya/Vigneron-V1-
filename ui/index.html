@@ -6,7 +6,6 @@
     <title>Menu Vigneron</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
     <div class="container">
@@ -62,7 +61,12 @@
 
             <div id="checkWinePriceMenu" class="subMenu">
                 <h2>Prix du Vin</h2>
-                <p>Le prix actuel du vin est de <span id="winePrice">0</span> $ par bouteille.</p>
+                <p>Prix actuel :</p>
+                <ul>
+                    <li>Vin Basique: <span id="basicPrice">0</span> $</li>
+                    <li>Vin de Bonne Qualité: <span id="goodPrice">0</span> $</li>
+                    <li>Vin Premium: <span id="premiumPrice">0</span> $</li>
+                </ul>
                 <button class="btn btn-secondary" onclick="backToMainMenu()">Retour</button>
             </div>
 
