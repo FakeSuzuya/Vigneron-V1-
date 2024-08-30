@@ -45,14 +45,15 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 
 CREATE TABLE IF NOT EXISTS `user_vigneron` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `identifier` VARCHAR(64) NOT NULL,
+    `identifier` VARCHAR(255) NOT NULL,
     `name` VARCHAR(50) NOT NULL,
     `job_grade` INT NOT NULL,
     `service_time` INT DEFAULT 0,
-    `last_login` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `last_login` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (`identifier`) REFERENCES `users`(`identifier`) ON DELETE CASCADE,
     FOREIGN KEY (`job_grade`) REFERENCES `job_grades`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 
 CREATE TABLE IF NOT EXISTS `items` (
