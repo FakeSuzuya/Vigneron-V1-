@@ -39,9 +39,9 @@ Installation:
 
  update Menu :
 
-![image](https://github.com/user-attachments/assets/72226b79-9baf-49d8-a335-47eddae4b7be)
-![image](https://github.com/user-attachments/assets/4715b44b-0681-456f-8272-4f7da89abd80)
-![image](https://github.com/user-attachments/assets/656a5ce0-95f2-45ea-8069-8e5b39f84bde)
+![image](https://github.com/user-attachments/assets/f6d7661d-da84-4545-a9d4-9a21dad7c1ae)
+![image](https://github.com/user-attachments/assets/a599ba3f-a824-42da-937b-4bf6e06693ab)
+
 
 
 
